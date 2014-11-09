@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+test_one:
+  email: test_one@test.com
+
+test_two:
+  email: test_two@test.com
+
+test_three:
+  email: test_three@test.com

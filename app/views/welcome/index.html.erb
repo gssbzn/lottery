@@ -1,0 +1,6 @@
+<% title 'welcome' %>
+<h1>Welcome</h1>
+<%= form_for @registration, url: {action: :create, controller: :registrations}, html: {class:''} do |f| %>
+  <%= f.text_field :email %>
+  <%= f.submit "Register" %>
+<% end %>
