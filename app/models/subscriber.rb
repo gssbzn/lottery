@@ -1,10 +1,13 @@
 class Subscriber < ActiveRecord::Base
-  validates :email, presence: true, length: { in: 2..50 }, email: true,
-                    uniqueness:{case_sensitive:false}
-
+  # Associations
   has_many :registrations, dependent: :destroy
   
+  # Validations
+  validates :email, presence: true, length: { in: 2..50 }, email: true,
+                    uniqueness:{case_sensitive:false}  
+  
+  # String representation
   def to_s
-    "email: #{self.email}"
+    "#{self.email}"
   end
 end

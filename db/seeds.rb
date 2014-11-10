@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Admin.create(email: 'admin@test.com',            
+            password: 'sigma;omega',
+            password_confirmation: 'sigma;omega') unless Admin.count >= 1

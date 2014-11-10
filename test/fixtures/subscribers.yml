@@ -8,3 +8,8 @@ test_two:
 
 test_three:
   email: test_three@test.com
+  
+<% 10.times do |n| %>
+subscriber_<%= n %>:
+  email: subscriber_<%= n %>@test.com
+<% end %>

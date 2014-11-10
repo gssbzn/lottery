@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+first_subscriber:
+  name: The First
+  prize: iphone
+  participant_number: 1
+  participant_number_multiple: 
+  participant_number_after: 0
+
+even_subscribers:
+  name: even
+  prize: iphone
+  participant_number: 
+  participant_number_multiple: 2
+  participant_number_after: 2
+      
+third_subscriber:
+  name: third
+  prize: iphone
+  participant_number: 3
+  participant_number_after: 0
+
+some_subscribers:
+  name: some
+  prize: iphone
+  participant_number: 7, 9
+  participant_number_after: 0

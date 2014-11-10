@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+tv:
+  name: tv
+
+iphone:
+  name: iPhone 6
+ 
+nexus:
+  name: nexus 6

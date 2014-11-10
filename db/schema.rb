@@ -11,20 +11,80 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108222011) do
+ActiveRecord::Schema.define(version: 20141110005940) do
 
-  create_table "registrations", force: true do |t|
-    t.integer "subscriber_id"
-    t.integer "number"
-    t.date    "created_at"
-  end
-
-  add_index "registrations", ["subscriber_id"], name: "index_registrations_on_subscriber_id"
-
-  create_table "subscribers", force: true do |t|
-    t.string   "email"
+  create_table "admins", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "available_prizes", force: true do |t|
+    t.integer  "prize_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "available_prizes", ["prize_id"], name: "index_available_prizes_on_prize_id", using: :btree
+
+  create_table "inventories", force: true do |t|
+    t.integer  "qty_available"
+    t.integer  "inventariable_id"
+    t.string   "inventariable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "inventories", ["inventariable_id", "inventariable_type"], name: "index_inventories_on_inventariable_id_and_inventariable_type", using: :btree
+
+  create_table "prizes", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "prizes", ["name"], name: "index_prizes_on_name", unique: true, using: :btree
+
+  create_table "registrations", force: true do |t|
+    t.integer "subscriber_id"
+    t.integer "number",        null: false
+    t.date    "created_at",    null: false
+    t.integer "prize_id"
+  end
+
+  add_index "registrations", ["prize_id"], name: "index_registrations_on_prize_id", using: :btree
+  add_index "registrations", ["subscriber_id"], name: "index_registrations_on_subscriber_id", using: :btree
+
+  create_table "rules", force: true do |t|
+    t.string   "name",                                    null: false
+    t.integer  "prize_id",                                null: false
+    t.string   "participant_number"
+    t.string   "participant_number_multiple"
+    t.integer  "participant_number_after",    default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rules", ["prize_id"], name: "index_rules_on_prize_id", using: :btree
+
+  create_table "subscribers", force: true do |t|
+    t.string   "email",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subscribers", ["email"], name: "index_subscribers_on_email", unique: true, using: :btree
 
 end

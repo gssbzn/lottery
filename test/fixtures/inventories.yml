@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+iphone:
+  inventariable: iphone (Prize)
+  qty_available: 100
+
+tv:
+  inventariable: tv (Prize)
+  qty_available: 100
+  
