@@ -1,3 +1,4 @@
+## Prizes ready to be given
 class AvailablePrize < ActiveRecord::Base
   # Associations
   belongs_to :prize

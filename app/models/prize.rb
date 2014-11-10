@@ -1,3 +1,4 @@
+## Give away prizes
 class Prize < ActiveRecord::Base
   # Associations
   has_one :inventory, as: :inventariable, dependent: :destroy

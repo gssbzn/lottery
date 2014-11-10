@@ -1,3 +1,4 @@
+## Inventory for different things
 class Inventory < ActiveRecord::Base
   # Associations
   belongs_to :inventariable, polymorphic: true

@@ -1,3 +1,4 @@
+#Participant chance
 class Registration < ActiveRecord::Base
   # Associations
   belongs_to :subscriber  

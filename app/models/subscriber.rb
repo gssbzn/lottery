@@ -1,3 +1,4 @@
+## Registered participant
 class Subscriber < ActiveRecord::Base
   # Associations
   has_many :registrations, dependent: :destroy

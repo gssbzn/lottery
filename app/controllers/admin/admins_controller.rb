@@ -3,14 +3,14 @@ class Admin::AdminsController < Devise::RegistrationsController
   prepend_before_filter :authenticate_scope!
   skip_before_action :require_no_authentication, only: [:new, :create]
 
-  # GET /admin/users/new
-  # GET /admin/users/new.json
+  # GET /admin/admins/new
+  # GET /admin/admins/new.json
   def new    
     super
   end
 
-  # POST /admin/users
-  # POST /admin/users.json
+  # POST /admin/admins
+  # POST /admin/admins.json
   def create
     build_resource(sign_up_params)
 
@@ -27,8 +27,8 @@ class Admin::AdminsController < Devise::RegistrationsController
     end
   end
   
-  # GET /admin/users
-  # GET /admin/users.json
+  # GET /admin/admins
+  # GET /admin/admins.json
   def index
     @admins = Admin.select(:id, :email).order(:email)
   end

@@ -1,3 +1,4 @@
+## Manage Prizes
 class Admin::PrizesController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_prize, only: [:show, :edit, :update, :destroy]

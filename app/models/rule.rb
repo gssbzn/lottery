@@ -1,3 +1,4 @@
+## Rule for give away
 class Rule < ActiveRecord::Base
   # Associations
   belongs_to :prize

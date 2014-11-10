@@ -1,28 +1,25 @@
-== README
+=Test aplication
+A test to show some development skills
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+==About the app
+Allow subscriber to participate for a chance to win a prize.
 
-Things you may want to cover:
+==Technology
+ANA ERP is built with
 
-* Ruby version
+* {Ruby 2.1.3}[https://www.ruby-lang.org/]
+* {Rails 4.1}[http://rubyonrails.org/]
+* Bootstrap[http://getbootstrap.com]
+* Devise[https://github.com/plataformatec/devise]
+* {Simple form}[https://github.com/plataformatec/simple_form]
 
-* System dependencies
+==Instalation
+Configure your database.yml and secrets.yml then run bundle install and rake db:setup
 
-* Configuration
+==Usage
+'/admin' is the route to acces admin configurarion
+it's been provided a test user as 'admin@test.com', password: 'sigma;omega'
 
-* Database creation
+==License
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+MIT License. Copyright 2014 Gustavo Bazan. http://gustavobazan.com

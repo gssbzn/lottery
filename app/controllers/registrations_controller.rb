@@ -1,3 +1,4 @@
+## Create subscriber registration
 class RegistrationsController < ApplicationController
 
   def create

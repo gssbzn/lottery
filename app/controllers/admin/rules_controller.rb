@@ -1,3 +1,4 @@
+## Manage Rules
 class Admin::RulesController < ApplicationController
   before_filter :authenticate_admin!
   
