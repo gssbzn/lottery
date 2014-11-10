@@ -1,6 +1,17 @@
 <% title 'welcome' %>
-<h1>Welcome</h1>
-<%= form_for @registration, url: {action: :create, controller: :registrations}, html: {class:''} do |f| %>
-  <%= f.text_field :email %>
-  <%= f.submit "Register" %>
-<% end %>
+<p class="text-center">Enter your email for a chance to win</p>
+<div class="row">
+  <%= form_for @registration, url: {action: :create, controller: :registrations}, html: { role:'form' } do |f| %>
+    <div class="col-md-offset-2 col-md-7">
+      <div class="form-group">
+      <%= f.label :email, class: 'sr-only' %>
+      <%= f.text_field :email, class: 'form-control', placeholder: 'Enter Email' %>
+      </div>
+    </div>
+    <div class=" col-md-3">
+      <div class="form-group">      
+        <%= f.submit "Register", class: 'btn btn-default' %>
+      </div>
+    </div>
+  <% end %>
+</div>

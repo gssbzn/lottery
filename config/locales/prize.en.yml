@@ -1,0 +1,23 @@
+en:
+  activerecord:
+    models:
+      prize:
+        zero: "Prizes"
+        one: "Prize"
+        other: "%{count} Prizes"
+    attributes:
+      prize:
+        name: "Name" 
+        qty_available: "Quantity Available"
+    errors:
+      models:
+        prize:
+          attributes:
+            name:
+              blank: "can't be blank"            
+  actioncontroller:
+    prize:
+      new: "New Prize"
+      created: "Prize created correctly."
+      edit: "Edit prize"
+      updated: "Prize updated correctly."

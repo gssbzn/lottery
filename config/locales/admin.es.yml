@@ -1,0 +1,38 @@
+#
+es:
+  activerecord:
+    models:
+      admin:
+        zero: "Usuarios"
+        one: "Usuario"
+        other: "%{count} Usuarios"
+    attributes:
+      admin:
+        email: "Email"
+        password: "Contraseña"
+        password_confirmation: "Confirmacion de contraseña"
+        remember_me: "Recordar me"
+        current_password: "Contraseña actual"
+    hints:
+      admin:
+        login: "Usuario o Email"
+        email: "usuario@dominio.com"        
+    errors:
+      models:
+        admin:
+          attributes:            
+            email:
+              blank: "No puede estar vacio"
+              invalid: "Correo Invalido"
+            password:
+              blank: "No puede estar vacio"
+              too_short: "Mínimo 8 caracteres"
+            password_confirmation:
+              confirmation: "Las contraseñas no coinciden"
+            current_password:
+              blank: "Ingrese su contraseña para continuar"
+  actioncontroller:
+    admin:
+      new: "Nuevo Usuario"
+      created: "Usuario Creado"
+      edit: "Actualice sus datos"

@@ -1,0 +1,8 @@
+<% title @rule.name %>
+<div class="row">
+  <h2><%= t(:edit, scope:'actioncontroller.rule') %></h2>
+
+  <%= render 'form' %>
+
+  <%= link_to t(:show), admin_prize_rule_path(@prize, @rule) %> 
+</div>

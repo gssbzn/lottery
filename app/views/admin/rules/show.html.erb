@@ -1,0 +1,27 @@
+<% title @rule.name %>
+<div class="row">
+  <div class="col-sm-8">
+    <h2>
+      <%= @rule.name %>
+      <%= link_to ' ', edit_admin_prize_rule_path(@prize, @rule), class:"btn btn-default glyphicon glyphicon-edit", role:"button" %>
+    </h2>
+    <div class="row">
+      <strong><%= t(:participant_number, scope:'activerecord.attributes.rule') %>:</strong>
+      <%= @rule.participant_number %>
+    </div>
+    <div class="row">
+      <strong><%= t(:participant_number_multiple, scope:'activerecord.attributes.rule') %>:</strong>
+      <%= @rule.participant_number_multiple %>
+    </div>
+    <div class="row">
+      <strong><%= t(:participant_number_after, scope:'activerecord.attributes.rule') %>:</strong>
+      <%= @rule.participant_number_after %>
+    </div>
+    <div class="row">
+      <%= link_to t(:back), admin_prize_path(@prize) %>
+    </div>
+  </div>
+</div>
+
+
+

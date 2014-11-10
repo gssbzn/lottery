@@ -3,11 +3,21 @@ class RegistrationsController < ApplicationController
   def create
     @subscriber = Subscriber.find_or_create_by(registration_params)
     @registration = @subscriber.registrations.build(created_at: Date.today)
-
-    flash = {notice: ':)'} if @subscriber.save
-    puts @subscriber.errors.to_h.to_s
-    flash = {error: @subscriber.errors} unless @subscriber.valid?
-    redirect_to :root, flash
+    
+    if @subscriber.save
+      @registration.reload
+      unless @registration.prize.nil?
+        flash[:success] = "You Won #{@registration.prize.name}"
+      else
+        flash[:notice] = 'Best Luck Next Time'
+      end
+    else
+      puts "errors: #{@registration.errors}"
+      error = @registration.errors[:subscriber].first.to_s unless @registration.errors[:subscriber].empty?
+      error ||= 'Something went wrong'
+      flash[:error] = error
+    end    
+    redirect_to :root
   end
 
   protected

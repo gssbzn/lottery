@@ -1,0 +1,41 @@
+
+<%= content_tag :h4, t(:rule,count: rules.size, scope:'activerecord.models') %>
+<%= link_to t(:new, scope:'actioncontroller.rule'), new_admin_prize_rule_path(prize) %>
+<div class="table-responsive">
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th><%= t(:name, scope:'activerecord.attributes.rule') %></th>          
+        <th><%= t(:participant_number, scope:'activerecord.attributes.rule') %></th>          
+        <th><%= t(:participant_number_multiple, scope:'activerecord.attributes.rule') %></th>          
+        <th><%= t(:participant_number_after, scope:'activerecord.attributes.rule') %></th>          
+        <th><%= t(:actions) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% rules.each do |rule| %>
+        <tr>
+          <td class="text-center"><%= link_to rule.name, admin_prize_rule_path(prize, rule) %></td>
+          <td class="text-center"><%= rule.participant_number %></td>
+          <td class="text-center"><%= rule.participant_number_multiple %></td>
+          <td class="text-center"><%= rule.participant_number_after %></td>
+          <td class="text-center">
+            <% # edit %>
+            <%= link_to(edit_admin_prize_rule_path(prize, rule), class: 'btn', title: t(:edit)) do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+              <%= t(:edit) %>
+            <% end %>
+
+            <% # destroy %>
+            <%= link_to(admin_prize_rule_path(prize, rule), method: :delete, class: 'btn', title: t(:destroy), data: {confirm: t(:confirm)}) do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              <%= t(:destroy) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+  
+

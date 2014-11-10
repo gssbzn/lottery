@@ -1,9 +1,26 @@
 Rails.application.routes.draw do
 
+  devise_for :admins, :controllers => { :registrations => 'admin/admins'}
+  
+  devise_scope :admin do
+    namespace :admin do
+      resources :admins
+    end
+  end
+  
   get 'welcome/index'
 
-  post 'registrations/create', as: :registrations
+  post 'registrations/', to: 'registrations#create'
+  
+  namespace :admin do
+    get "/" => "prizes#index"
+    resources :prizes do
+      resources :rules
+    end
+  end
 
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

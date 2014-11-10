@@ -1,0 +1,17 @@
+<%= simple_form_for [:admin, @prize, @rule],
+  html: {class: 'form-horizontal', role: 'form' },
+  wrapper: :horizontal_form,
+  wrapper_mappings: {
+              check_boxes: :horizontal_radio_and_checkboxes,
+              boolean: :horizontal_boolean } do |f| %>
+  <%= f.error_notification %>
+    <%= f.input :name, label_html: { class: 'col-sm-3 control-label' } %>    
+    <%= f.input :participant_number, hint: "Enter multiple values comma separated (, ).", label_html: { class: 'col-sm-3 control-label' } %>
+    <%= f.input :participant_number_multiple, hint: "Enter multiple values comma separated (, ).", label_html: { class: 'col-sm-3 control-label' } %>
+    <%= f.input :participant_number_after, label_html: { class: 'col-sm-3 control-label' } %>
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-9">
+        <%= f.button :submit %>
+      </div>
+    </div>
+<% end %>

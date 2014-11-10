@@ -1,0 +1,22 @@
+<% title @prize.name %>
+<div class="row">
+  <div class="col-sm-8">
+    <h2>
+      <%= @prize.name %>
+      <%= link_to ' ', edit_admin_prize_path(@prize), class:"btn btn-default glyphicon glyphicon-edit", role:"button" %>
+    </h2>
+    <div class="row">
+      <strong><%= t(:qty_available, scope:'activerecord.attributes.inventory') %>:</strong>
+      <%= @prize.inventory.qty_available  %>
+    </div>
+    <div class="row">
+      <%= render partial: "admin/rules/rules", locals: {prize: @prize, rules: @prize.rules} %>
+    </div>
+    <div class="row">
+      <%= link_to t(:back), admin_prizes_path %>
+    </div>
+  </div>
+</div>
+
+
+

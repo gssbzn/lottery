@@ -1,0 +1,12 @@
+<div class ="small-6 large-4 colummn center row">
+  <h2><%= t(:new, scope:'actioncontroller.user') %> </h2>
+  <%= simple_form_for @admin, :url => admin_admins_path do |f| %>
+    <%= f.input :email, as: "email", required: true, placeholder: t(:email, scope: 'activerecord.hints.admin') %>
+    <%= f.input :password, required: true, as:'password' %>     
+    <%= f.input :password_confirmation, required: true, as:'password' %>
+    
+    <%= f.button :submit, data: { disable_with: (t :saving) } %>
+  <% end %>  
+
+  <%= link_to t(:back), admin_admins_path %>
+</div>

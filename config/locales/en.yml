@@ -20,4 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  saving: "Saving"
+  show: "Show"
+  new: "New"
+  edit: "Edit"
+  destroy: "Destroy"
+  back: "Back"
+  confirm: "Are you sure?"
+  actions: "Actions"
+  search:
+    hint: "Find Something"
+    button: "Search"
+  session:
+    sign_in: "Sign In"
+    logging_in: "Logging In"
+    forgotten_password: "Forgot your password?"
+    send_reset_pass: "Send me reset password instructions"
+    login: "Login"
+    logout: "Logout"

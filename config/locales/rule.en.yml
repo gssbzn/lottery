@@ -1,0 +1,22 @@
+en:
+  activerecord:
+    models:
+      rule:
+        zero: "Rules"
+        one: "Rule"
+        other: "%{count} Rules"
+    attributes:
+      rule:
+        name: "Name"        
+    errors:
+      models:
+        rule:
+          attributes:
+            name:
+              blank: "can't be blank"            
+  actioncontroller:
+    rule:
+      new: "New rule"
+      created: "Rule created correctly."
+      edit: "Edit rule"
+      updated: "Rule updated correctly."

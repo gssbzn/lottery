@@ -7,9 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header
+    <%= render partial: 'shared/header' %>
+  </header>
   <div class="container">
     <%= render partial: 'shared/flash_messages', flash: flash %>
     <%= yield %>
   </div>
+  <footer>
+    <%= render partial: 'shared/footer' %>
+  </footer>
 </body>
 </html>

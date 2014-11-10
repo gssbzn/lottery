@@ -1,0 +1,22 @@
+es:
+  activerecord:
+    models:
+      prize:
+        zero: "Premios"
+        one: "Premio"
+        other: "%{count} Premios"
+    attributes:
+      prize:
+        name: "Nombre"        
+    errors:
+      models:
+        prize:
+          attributes:
+            name:
+              blank: "no puede estar en blanco"
+  actioncontroller:
+    prize:
+      new: "Nuevo Premio"
+      created: "Premio creado correctamente."
+      edit: "Editar premio"
+      updated: "Premio actualizado correctamente."

@@ -1,0 +1,9 @@
+<% title @prize.name %>
+<div class="row">
+  <h2><%= t(:edit, scope:'actioncontroller.prize') %></h2>
+
+  <%= render 'form' %>
+
+  <%= link_to t(:show), admin_prize_path(@prize) %> |
+  <%= link_to t(:back), admin_prizes_path %>
+</div>

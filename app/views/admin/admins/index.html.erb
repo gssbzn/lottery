@@ -1,0 +1,22 @@
+
+<div class = "row">
+  <h2><%= t(:admin, scope:'activerecord.models', count:@admins.size) %></h2>
+  <%= link_to t(:new, scope:'actioncontroller.admin'), new_admin_admin_path %>
+  <table>
+    <thead>
+      <tr>        
+        <th width="200"><%= t(:email, scope:'activerecord.attributes.user') %></th>        
+      </tr>
+    </thead>
+    <tbody>
+      <% @admins.each do |user| %>
+        <tr>          
+          <td><%= user.email %></td>          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+
