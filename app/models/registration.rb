@@ -14,6 +14,8 @@ class Registration < ActiveRecord::Base
   # Virtual column to create subsciber
   attr_accessor :email
 
+  delegate :name, to: :prize, prefix: true
+  
   # initialize date
   def after_initialize
     set_created_at

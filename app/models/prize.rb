@@ -9,8 +9,8 @@ class Prize < ActiveRecord::Base
   validates :name, presence: true, uniqueness:{case_sensitive:false}
 
   # Virtual column for inventory
-  delegate :qty_available, to: :inventory, prefix: true
   attr_accessor :qty_available
+  delegate :qty_available, to: :inventory, prefix: true
   
   # Get available prize for a participant
   def self.winning_prize(participant_number)
