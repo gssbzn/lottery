@@ -11,9 +11,9 @@ class Rule < ActiveRecord::Base
   # Verify for a given participant number if complies to a rule
   # if so a prize is set apart for hin or in case rules overlap for a next participant  
   def self.generate_prizes(participant_number)
-    rules = Rule.includes(prize: [:inventory]).where('participant_number_after < ?', participant_number).order(:created_at)
+    rules = Rule.includes(prize: [:inventory]).where('participant_number_after < ?', participant_number).order(:id)
     rules.each do |rule|
-      if(rule.prize.inventory.qty_available.to_i > 0)
+      if(rule.prize.inventory_qty_available.to_i > 0)
         if rule.participant_number?
           # Verify especific participants  
           verify_especific participant_number, rule.participant_number, rule.prize
@@ -37,8 +37,7 @@ class Rule < ActiveRecord::Base
   def self.verify_especific(participant_number, numbers, prize)
     winners = numbers.split(', ')
     if winners.include? participant_number.to_s
-      available_prize = AvailablePrize.new prize: prize
-      available_prize.save!
+      AvailablePrize.create! prize: prize
     end
   end
   
@@ -48,8 +47,7 @@ class Rule < ActiveRecord::Base
     winners = multiples.split(', ')
     winners.each do |multiple|
       if participant_number.to_i % multiple.to_i == 0
-        available_prize = AvailablePrize.new prize: prize
-        available_prize.save!
+        AvailablePrize.create! prize: prize
       end
     end
   end

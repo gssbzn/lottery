@@ -9,12 +9,13 @@ class Prize < ActiveRecord::Base
   validates :name, presence: true, uniqueness:{case_sensitive:false}
 
   # Virtual column for inventory
+  delegate :qty_available, to: :inventory, prefix: true
   attr_accessor :qty_available
   
   # Get available prize for a participant
   def self.winning_prize(participant_number)
     Rule.generate_prizes(participant_number)
-    available_prize = AvailablePrize.order(:created_at).first
+    available_prize = AvailablePrize.order(:id).first
     available_prize
   end
   
@@ -22,4 +23,5 @@ class Prize < ActiveRecord::Base
   def to_s
     "#{self.name}"
   end
+  
 end

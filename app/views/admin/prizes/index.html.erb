@@ -14,7 +14,7 @@
         <% @prizes.each do |prize| %>
           <tr>
             <td class="text-center"><%= link_to prize.name, admin_prize_path(prize) %></td>
-            <td class="text-center"><%= prize.inventory.qty_available %></td>
+            <td class="text-center"><%= prize.inventory_qty_available %></td>
             <td class="text-center">
                 <% # edit %>
                 <%= link_to(edit_admin_prize_path(prize), class: 'btn', title: t(:edit)) do %>

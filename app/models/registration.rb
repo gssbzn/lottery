@@ -41,4 +41,10 @@ class Registration < ActiveRecord::Base
       winning_prize.destroy #release prize
     end
   end
+  
+  # String representation
+  def to_s
+    "#{self.email}"
+  end
+  
 end

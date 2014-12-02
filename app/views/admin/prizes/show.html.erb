@@ -7,7 +7,7 @@
     </h2>
     <div class="row">
       <strong><%= t(:qty_available, scope:'activerecord.attributes.inventory') %>:</strong>
-      <%= @prize.inventory.qty_available  %>
+      <%= @prize.inventory_qty_available  %>
     </div>
     <div class="row">
       <%= render partial: "admin/rules/rules", locals: {prize: @prize, rules: @prize.rules} %>

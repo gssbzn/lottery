@@ -8,14 +8,14 @@ class Inventory < ActiveRecord::Base
   validates :inventariable, presence: true
   validates :inventariable_id, uniqueness: { scope: :inventariable_type }
   
-  # Redouce the inventori of a given resource
+  # Redouce the inventory of a given resource
   def self.reduce_inventory(inventariable)
-    inv = Inventory.where(inventariable: inventariable).first
-    unless inv.nil?      
-      inv.qty_available -= 1
-      inv.save
-      return true
-    end
-    false
+    Inventory.where(inventariable: inventariable).first.decrement!(:qty_available)
   end
+  
+  # String representation
+  def to_s
+    "#{self.name}"
+  end
+  
 end
