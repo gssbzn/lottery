@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 20141110005940) do
   create_table "registrations", force: true do |t|
     t.integer "subscriber_id"
     t.integer "number",        null: false
-    t.date    "created_at",    null: false
     t.integer "prize_id"
+    t.date    "created_at",    null: false
   end
 
   add_index "registrations", ["prize_id"], name: "index_registrations_on_prize_id", using: :btree

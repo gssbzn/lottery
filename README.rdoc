@@ -17,8 +17,9 @@ ANA ERP is built with
 Configure your database.yml and secrets.yml then run bundle install and rake db:setup
 
 ==Usage
-'/admin' is the route to acces admin configurarion
-it's been provided a test user as 'admin@test.com', password: 'sigma;omega'
+'/admin' is the route to acces admin configurarion.
+
+It's been provided a test user as 'admin@test.com', password: 'gamma;beta'
 
 ==License
 
