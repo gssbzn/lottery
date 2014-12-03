@@ -6,8 +6,8 @@
               boolean: :horizontal_boolean } do |f| %>
   <%= f.error_notification %>
     <%= f.input :name, label_html: { class: 'col-sm-3 control-label' } %>    
-    <%= f.input :participant_number, hint: "Enter multiple values comma separated (, ).", label_html: { class: 'col-sm-3 control-label' } %>
-    <%= f.input :participant_number_multiple, hint: "Enter multiple values comma separated (, ).", label_html: { class: 'col-sm-3 control-label' } %>
+    <%= f.input :participant_number, hint: t('activerecord.hints.rule.comma_separated'), label_html: { class: 'col-sm-3 control-label' } %>
+    <%= f.input :participant_number_multiple, hint: t('activerecord.hints.rule.comma_separated'), label_html: { class: 'col-sm-3 control-label' } %>
     <%= f.input :participant_number_after, label_html: { class: 'col-sm-3 control-label' } %>
     <div class="form-group">
       <div class="col-sm-offset-3 col-sm-9">

@@ -14,8 +14,10 @@ en:
         remember_me: "Remember me"
         current_password: "Current password"
     hints:
-      admin:        
-        email: "user@domain.com"        
+      admin:
+        email: "user@domain.com"
+        password: "Leave it blank if you don't want to change it."
+        current_password: "We need your current password to confirm your changes."
     errors:
       models:
         admin:

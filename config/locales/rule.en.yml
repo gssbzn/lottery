@@ -7,7 +7,10 @@ en:
         other: "%{count} Rules"
     attributes:
       rule:
-        name: "Name"        
+        name: "Name"  
+    hints:
+      rule:
+        comma_separated: "Enter multiple values comma separated (, )."
     errors:
       models:
         rule:
