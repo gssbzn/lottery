@@ -25,13 +25,9 @@ doc/*
 *~
 *.swp
 *.DS_Store
-*.lock
+#*.lock
 
 # Netbeans specific
 nbproject/*
 #!nbproject/project.properties
 #!nbproject/project.xml
-
-# Koombea specific
-config/database.yml
-config/secrets.yml
